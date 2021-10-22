@@ -1,0 +1,11 @@
+<launch>
+
+    <!-- lingao depth camera driver bringup -->
+    <!-- <include file="$(find lingao_visual)/launch/lingao_depthcamera.launch"/> -->
+
+    <!-- lingao lingao_kcf_tracking -->
+    <node pkg="lingao_kcf_tracker" name="lingao_kcf_tracking" type="lingao_kcf_tracking_node" output="screen">
+    </node>
+
+
+</launch>

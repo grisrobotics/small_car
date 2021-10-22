@@ -1,0 +1,21 @@
+<launch>
+
+    <!-- lingao depth camera driver bringup -->
+    <include file="$(find lingao_visual)/launch/lingao_depthcamera.launch"/>
+
+    <!-- lingao line_follower -->
+    <node pkg="lingao_follower" name="hsv_detection_node" type="hsv_detection_node" output="screen">
+          <param name="H_Max" value="68"/>
+          <param name="H_Min" value="48"/>
+          <param name="S_Max" value="255"/>
+          <param name="S_Min" value="62"/>
+          <param name="V_Max" value="255"/>
+          <param name="V_Min" value="106"/>
+    </node>
+
+
+</launch>
+
+<!-- RED          :  H:[318 - 360] S:[43 - 255] V:[46 - 255] -->
+<!-- YELLOW :   H:[68   -  48]   S:[62 - 255] V:[106 - 255] -->
+<!-- BLUE       :   H:[200 - 248] S:[68 - 255] V:[97 - 255] -->

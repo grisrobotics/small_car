@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+  
+  <!-- args -->
+  <arg name="network_param" default="yolov3"  doc="model type [yolov3, yolov3_tiny, yolov2, yolov2-tiny]" />
+  <arg name="image" default="camera/rgb/image_raw" />
+
+  <!-- lingao depth camera driver bringup -->
+  <include file="$(find lingao_visual)/launch/lingao_depthcamera.launch"/>
+
+  <!-- Include main launch file -->
+  <include file="$(find darknet_ros)/launch/darknet_ros.launch">
+    <arg name="network_param_file"    value="$(find darknet_ros)/config/$(arg network_param).yaml"/>
+    <arg name="image" value="$(arg image)" />
+  </include>
+
+</launch>

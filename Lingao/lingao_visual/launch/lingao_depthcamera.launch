@@ -1,0 +1,14 @@
+
+<launch>
+
+    <!-- Arguments -->
+    <arg name="model" default="$(optenv LINGAO_MODEL LA_4WD_LingFeng)"/>
+
+    <include file="$(find lingao_visual)/launch/camera/astra.launch"/>
+
+    <!-- Publish static transform of the laser. Define your sensor offset here -->
+    <node pkg="tf2_ros" if="$(eval model == 'LA_4WD_LingFeng')" type="static_transform_publisher" name="base_link_to_laser" args="0.04 0 0.138 3.1415 0 0  /base_link /camera_link"/>
+    <node pkg="tf2_ros" if="$(eval model == 'LA_4WD_LingLei')" type="static_transform_publisher" name="base_link_to_laser" args="0.140 0 0.222 0 0 0  /base_link /camera_link"/>
+    <node pkg="tf2_ros" if="$(eval model == 'LA_4WD_LingHuan')" type="static_transform_publisher" name="base_link_to_laser" args="0.165 0 0.52 0 0 0  /base_link /camera_link"/>
+
+</launch>

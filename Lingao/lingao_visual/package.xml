@@ -1,0 +1,22 @@
+<?xml version="1.0.0"?>
+    <package>
+    <name>lingao_visual</name>
+    <version>1.0.0</version>
+    <description>The lingao_visual package</description>
+    <maintainer email="keaa@keaa.net">owen</maintainer>
+
+    <license>BSD</license>
+
+    
+    <buildtool_depend>catkin</buildtool_depend>
+    <build_depend>tf2</build_depend>
+    <build_depend>tf2_ros</build_depend>
+    
+    <run_depend>tf2_ros</run_depend>
+    <run_depend>astra_camera</run_depend>
+    <run_depend>depthimage_to_laserscan</run_depend>
+    
+
+    <export>
+    </export>
+</package>
